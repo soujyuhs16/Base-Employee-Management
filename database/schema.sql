@@ -1,0 +1,13 @@
+CREATE DATABASE IF NOT EXISTS employee_management;
+USE employee_management;
+
+CREATE TABLE IF NOT EXISTS employees (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(50) NOT NULL COMMENT '名字',
+    last_name VARCHAR(50) NOT NULL COMMENT '姓氏',
+    email VARCHAR(100) NOT NULL UNIQUE COMMENT '邮箱',
+    phone VARCHAR(20) COMMENT '电话',
+    position VARCHAR(100) NOT NULL COMMENT '职位',
+    hire_date DATE NOT NULL COMMENT '入职日期',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='员工表';
